@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 app.get("/api/localize/*", (req, res) => {
     res.sendFile(path.join(publicPath, `./api/localize/${req.params[0]}.json`));
 });
-const port = 80;
+const port = process.env.PORT || 3000;
+//const port = 80;
 app.listen(port, () => {
   console.log(`Сервер запущен на порту ${port}`);
 });
